@@ -48,7 +48,9 @@ public class PlayerCollision : MonoBehaviour {
 		Debug.Log(Mathf.Pow(speedInCollisionDirection, 2f));
         if (Mathf.Abs(Mathf.Pow(speedInCollisionDirection, 2f)) > breakSpeedThreshold) {
 			GetRubble();
+			// gameObject.GetComponent<AudioSource>().Pause();
 			gameManager.EndGame();
+			// collision.gameObject.GetComponent<AudioSource>().Play();
 			Destroy(gameObject);
 		}
 		HandleCollision(collision);
